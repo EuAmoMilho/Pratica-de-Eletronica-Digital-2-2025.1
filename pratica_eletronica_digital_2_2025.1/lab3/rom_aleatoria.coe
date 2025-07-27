@@ -1,0 +1,10 @@
+; coe file for ROM memory 
+; 16 binary numbers 16 bits large
+
+memory_initialization_radix=16;
+memory_initialization_vector = 
+
+000A, 0063, 010C, 00CD,
+001E, 00F8, 0076, 0155,
+0041, 0011, 00AA, 003F,
+00C0, 000C, 0079, 0016;
