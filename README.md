@@ -1,4 +1,4 @@
-*Digital Electronics Laboratory 2*
+**Digital Electronics Laboratory 2*&
 Class for the 1st semester of 2025 at FCTE/UnB. Taught by professor Dr. Gilmar Bezerra.
 The course outline includes Mealy and Moore Finite-State-Machines(FSM), Register-Transfer-Level(RTL) projects, memory basics, and Assembly-based PicoBlaze firmware projects.
 For the practical classes, a Vivado v2023.2 installed on Ubuntu 22.02 was used to program an Artix-7 FPGA integrated on a Digilent Basys3 board.
