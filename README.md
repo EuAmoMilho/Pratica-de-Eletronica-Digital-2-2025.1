@@ -4,7 +4,7 @@ Class for the 1st semester of 2025 at FCTE/UnB. Taught by professor Dr. Gilmar B
 The course outline includes Mealy and Moore Finite-State-Machines(FSM), Register-Transfer-Level(RTL) projects, memory basics, and Assembly-based PicoBlaze firmware projects.
 For the practical classes, a Vivado v2023.2 installed on Ubuntu 22.02 was used to program an Artix-7 FPGA integrated on a Digilent Basys3 board.
 
-This repository contains all the works proposed to the class on the 1st semester of 2025, as well as some exercises proposed by Digital Electronics Theory 2 teacher at the same time.
+This repository contains all the works proposed to the class on the 1st semester of 2025, as well as some exercises proposed by Digital Electronics Theory teacher at the same time.
 
 **Prática de Eletrônica Digital 2**
 
