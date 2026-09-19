@@ -1,0 +1,37 @@
+            NAMEREG s1, i       ; indice i mapeado no registrador s1
+            CONSTANT opA, 01    ; multiplicando de 8 bits na porta 01
+            CONSTANT opB, 02    ; multiplicador de 8 bits na porta 02
+            CONSTANT MSprod, 03 ; MS byte do produto na porta 03
+            CONSTANT LSprod, 04 ; LS byte do produto na porta 04
+            CONSTANT MSint, 05  ;  MS byte do contador de interrupcoes
+            CONSTANT LSint, 06  ; LS byte do contador de interrupcoes
+            ;
+   forever: ENABLE INTERRUPT
+            INPUT s3, opA
+            INPUT s4, opB
+            CALL mult_soft
+            OUTPUT s5, MSprod
+            OUTPUT s6, LSprod
+            OUTPUT s8, LSint
+            OUTPUT s7, MSint
+            JUMP forever
+            ;
+ mult_soft: LOAD s5, 00         ; limpa s5, s6 fica em dont care
+            LOAD i, 08          ; inicializa indice do laco
+            ;
+ mult_loop: SR0 s4              ; desloca a direita s4, carry = LSB
+            JUMP NC, shift_prod
+            ADD s5, s3
+            ;
+shift_prod: SRA s5
+            SRA s6
+            SUB i, 01
+            JUMP NZ, mult_loop
+            RETURN 
+            ;
+       ISR: ADD s8, 01
+            ADDCY s7, 00
+            RETURNI ENABLE
+            ;
+            ADDRESS 3FF
+            JUMP ISR

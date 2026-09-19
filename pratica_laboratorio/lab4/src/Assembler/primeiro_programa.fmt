@@ -1,0 +1,15 @@
+      ;primeiro programa PB6
+      CONSTANT SWITCHES, 01 ; SWITCHES = 01h
+      CONSTANT LEDS, 02     ; LEDS = 02h
+soma: ; label da rotina
+      INPUT s0, SWITCHES    ; s0 recebe conteudo das chaves
+      LOAD s1, s0           ; s1 = s0
+      LOAD s2, s0           ; s2 = s0
+      AND s1, 07            ; s1 = s1 AND 0000 0111
+      AND s2, 27            ; s2 = s2 AND 0001 1011
+      SR0 s2                ; s2 = '0'& s2[7:1]
+      SR0 s2                ; s2 = '0'& s2[7:1]
+      SR0 s2                ; s2 = '0'& s2[7:1]
+      ADD s1, s2            ; s1 = s1 + s2
+      OUTPUT s1, LEDS       ; leds recebem conteudo de s1
+      JUMP soma             ; salta para rotina soma

@@ -1,0 +1,13 @@
+;projeto 1
+
+CONSTANT chaves1, 00
+CONSTANT chaves2, 01
+CONSTANT leds,	  02
+
+function:	INPUT s0, chaves1
+		INPUT s1, chaves2
+		LOAD s2, s0
+		ADD s2, s1
+		OUTPUT s2, leds
+		JUMP function
+		
